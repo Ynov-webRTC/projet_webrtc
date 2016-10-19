@@ -1,2 +1,3 @@
 .idea/*
 app_webrtc/node_modules/*
+app_webrtc/.idea/*
