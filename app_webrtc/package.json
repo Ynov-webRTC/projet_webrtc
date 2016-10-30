@@ -16,5 +16,32 @@
     "node-sass-middleware": "0.8.0",
     "serve-favicon": "~2.3.0",
     "uniqid": "^4.1.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+      "strict": "error",
+      "indent": [
+        "error",
+        "tab"
+      ],
+      "linebreak-style": [
+        "error",
+        "windows"
+      ],
+      "quotes": [
+        "error",
+        "double"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
+    }
   }
 }

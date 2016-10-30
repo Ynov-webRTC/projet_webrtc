@@ -1,13 +1,12 @@
 "use strict";
-
-var uniqid = require('uniqid');
+var uniqid = require("uniqid");
 
 var Stream = function () {
     console.log("stream");
 };
 
 Stream.prototype.create = function (req) {
-    return req.get('host') + "/" + uniqid();
+    return req.get("host") + "/" + uniqid();
 };
 
 Stream.prototype.start = function (id) {
