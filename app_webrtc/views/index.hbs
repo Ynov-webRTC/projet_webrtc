@@ -1,2 +1,11 @@
-<h3>{{title}}</h3>
-<p>Bienvenue au projet {{title}}</p>
+<div class="jumbotron text-center">
+    <p>Accéder à un stream existant ou créer votre propre stream</p>
+    <form class="form-inline" method="post" action="/start">
+        <input type="text" class="form-control" placeholder="ID du stream" name="id_stream">
+        <input type="submit" class="btn btn-fill btn-success" value="Démarrer">
+        <b>OU</b>
+        <a href="/create" class="btn btn-fill btn-warning">Créer son stream</a>
+    </form>
+
+</div>
+
