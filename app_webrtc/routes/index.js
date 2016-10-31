@@ -1,8 +1,9 @@
 "use strict";
 var express = require("express");
 var router = express.Router();
-var Stream = require("../controller/stream");
-var colors = require("colors/safe");
+var streamController = require("../controller/streamController");
+//var colors = require("colors/safe");
+var stream = new streamController();
 
 router.get("/", function(req, res, next) {
     res.render("index", {title: "WebRTC"});
@@ -10,22 +11,26 @@ router.get("/", function(req, res, next) {
 
 router.get("/stream/:id", function(req, res, next) {
     var id_stream = req.params.id;
-    var stream = new Stream();
-    stream.start(id_stream);
-    res.render("stream", {"id_stream": id_stream});
+    startStream(id_stream, res);
 });
+
+/*router.post("/start", function (req, res, next) {
+ var id_stream = req.body.id_stream;
+ startStream(id_stream, res);
+ });*/
 
 router.get("/create", function (req, res, next) {
-    var stream = new Stream();
-    var url = stream.create(req);
-    res.render("create", {url: url});
+    var callback = function (url) {
+        res.render("create", {url: url});
+    };
+    stream.create(req, callback);
 });
 
-router.post("/start", function (req, res, next) {
-    var id_stream = req.body.id_stream;
-    var stream = new Stream();
-    stream.start(id_stream);
-    res.render("stream", {"id_stream": id_stream});
-});
+var startStream = function (id_stream, res) {
+    var callback = function (model) {
+        res.render("stream", {"model": model});
+    };
+    stream.start(id_stream, callback);
+};
 
 module.exports = router;
