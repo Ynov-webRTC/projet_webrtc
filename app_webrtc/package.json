@@ -12,36 +12,10 @@
     "debug": "~2.2.0",
     "express": "~4.13.4",
     "hbs": "~4.0.0",
+    "mongoose": "^4.6.5",
     "morgan": "~1.7.0",
     "node-sass-middleware": "0.8.0",
     "serve-favicon": "~2.3.0",
     "uniqid": "^4.1.0"
-  },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "es6": true,
-      "node": true
-    },
-    "extends": "eslint:recommended",
-    "rules": {
-      "strict": "error",
-      "indent": [
-        "error",
-        "tab"
-      ],
-      "linebreak-style": [
-        "error",
-        "windows"
-      ],
-      "quotes": [
-        "error",
-        "double"
-      ],
-      "semi": [
-        "error",
-        "always"
-      ]
-    }
   }
 }

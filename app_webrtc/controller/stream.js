@@ -6,7 +6,7 @@ var Stream = function () {
 };
 
 Stream.prototype.create = function (req) {
-    return req.get("host") + "/" + uniqid();
+    return req.get("host") + "/stream/" + uniqid();
 };
 
 Stream.prototype.start = function (id) {
