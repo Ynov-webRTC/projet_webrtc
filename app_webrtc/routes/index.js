@@ -9,11 +9,6 @@ router.get("/", function(req, res, next) {
     res.render("index", {title: "WebRTC"});
 });
 
-router.get("/stream/:id", function(req, res, next) {
-    var id_stream = req.params.id;
-    startStream(id_stream, res);
-});
-
 /*router.post("/start", function (req, res, next) {
  var id_stream = req.body.id_stream;
  startStream(id_stream, res);
@@ -24,6 +19,11 @@ router.get("/create", function (req, res, next) {
         res.render("create", {url: url});
     };
     stream.create(req, callback);
+});
+
+router.get("/stream/:id", function (req, res, next) {
+    var id_stream = req.params.id;
+    startStream(id_stream, res);
 });
 
 var startStream = function (id_stream, res) {
