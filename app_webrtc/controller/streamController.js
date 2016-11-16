@@ -17,10 +17,9 @@ Stream.prototype.create = function (req, callback) {
 
 Stream.prototype.start = function (id_stream, callback) {
     console.log("lancement du stream " + id_stream);
-    var done = function (model) {
+    this.findStreamById(id_stream, function (model) {
         callback(model);
-    };
-    this.findStreamById(id_stream, done);
+    });
 };
 
 Stream.prototype.findStreamById = function (id_stream, done) {

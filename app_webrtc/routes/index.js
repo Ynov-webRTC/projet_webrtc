@@ -15,10 +15,9 @@ router.get("/", function(req, res, next) {
  });*/
 
 router.get("/create", function (req, res, next) {
-    var callback = function (url) {
+    stream.create(req, function (url) {
         res.render("create", {url: url});
-    };
-    stream.create(req, callback);
+    });
 });
 
 router.get("/stream/:id", function (req, res, next) {
@@ -27,10 +26,9 @@ router.get("/stream/:id", function (req, res, next) {
 });
 
 var startStream = function (id_stream, res) {
-    var callback = function (model) {
+    stream.start(id_stream, function (model) {
         res.render("stream", {"model": model});
-    };
-    stream.start(id_stream, callback);
+    });
 };
 
 module.exports = router;
